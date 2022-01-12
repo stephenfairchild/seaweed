@@ -3,14 +3,16 @@ import path from "path";
 import frontMatter from "front-matter";
 import { marked } from "marked";
 import { Post } from "../types";
+import throwOnMissingField from "./throwOnMissingField";
 
 /**
  * Read through the content directory and parse the contents into attributes
  */
-export default async function readPostsFromSrc(
-    contentDirectory: string
-): Promise<Post[]> {
-    const postsPath = path.join(__dirname, "..", contentDirectory);
+export default async function readPostsFromSrc(config: {
+    directory: string;
+}): Promise<Post[]> {
+    const { directory } = config;
+    const postsPath = path.join(__dirname, "..", directory);
 
     const dir = await fs.readdir(postsPath);
 
@@ -38,26 +40,4 @@ export default async function readPostsFromSrc(
             };
         })
     );
-}
-
-function throwOnMissingField(
-    attributes: { title: string; created: string; active: boolean },
-    slug: string
-) {
-    const throwError = (attr: string) => {
-        throw new Error(`Missing Required Attribute. ${attr} attribute is required for all content. Not found for post:
-                        ${slug}`);
-    };
-
-    if (typeof attributes.title === "undefined") {
-        throwError("title");
-    }
-
-    if (typeof attributes.created === "undefined") {
-        throwError("created");
-    }
-
-    if (typeof attributes.active === "undefined") {
-        throwError("active");
-    }
 }
