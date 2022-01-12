@@ -4,7 +4,7 @@ Seaweed takes your markdown files and stores them as HTML in Redis.
 
 `npm install -g seaweed`
 
-Register a Redis url as an environment variable:
+Register a Redis URL as an environment variable:
 
 `export SEAWEED_REDIS_URL=some_redis_url`
 
