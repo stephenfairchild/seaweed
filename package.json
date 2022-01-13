@@ -1,9 +1,10 @@
 {
     "name": "@stephenfairchild/seaweed",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Stores markdown in Redis as HTML",
     "main": "index.ts",
     "scripts": {
+        "publish": "npm publish --access public",
         "test": "npm run test:jest && npm run test:types",
         "test:jest": "node --experimental-vm-modules node_modules/.bin/jest",
         "test:types": "tsc"
