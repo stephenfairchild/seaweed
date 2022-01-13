@@ -4,7 +4,6 @@
         "isolatedModules": true,
         "lib": ["ESNext", "dom"],
         "target": "es5",
-        "noEmit": true,
         "noImplicitAny": true,
         "noImplicitReturns": false,
         "noImplicitThis": true,
@@ -13,7 +12,8 @@
         "noUncheckedIndexedAccess": true,
         "skipLibCheck": true,
         "strict": true,
-        "types": ["jest"],
+        "types": ["jest", "node"],
+        "outDir": "./build",
         "paths": {
             "seaweed": ["./src/index.ts"]
         }
