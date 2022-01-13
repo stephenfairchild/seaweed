@@ -11,9 +11,6 @@
     "bin": {
         "seaweed": "src/index.ts"
     },
-    "jest": {
-        "extensionsToTreatAsEsm": [".ts"]
-    },
     "transform": {},
     "author": "",
     "license": "ISC",

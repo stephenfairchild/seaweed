@@ -1,12 +1,11 @@
 #!/usr/bin/env node
 import { createClient } from "redis";
-const parseArgs = require("minimist");
-
 import cacheContent from "./bin/cacheContent";
 import { error, log } from "./bin/cliLog";
+import minimist from "minimist";
 
 (async () => {
-    const argv = parseArgs(process.argv.slice(2));
+    const argv = minimist(process.argv.slice(2));
 
     if (argv._.length === 0) {
         error("You must provide an argument.");
@@ -20,6 +19,8 @@ import { error, log } from "./bin/cliLog";
         log("Running cache script...");
     }
 
+    // Default to the current working directory if a --directory flag is
+    // not provided
     let contentDirectory = argv.directory ? argv.directory : process.cwd();
 
     log(`Content directory detected: ${contentDirectory}`);
