@@ -16,7 +16,7 @@ Right now, `cache` is the only supported command. If you do not pass
 in a `--directory` flag then seaweed uses the current working directory.
 
 As an example, this is a valid command:
-`seaweed cache`
+`seaweed cache` and it works great given the folder you're in has markdown files!
 
 View the `examples` directory to see how your content should be structured in order
 for it to be stored correctly. You'll need to define a few attributes at the beginning
