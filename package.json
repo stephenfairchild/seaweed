@@ -1,6 +1,6 @@
 {
     "name": "@stephenfairchild/seaweed",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "description": "Stores markdown in Redis as HTML",
     "main": "index.js",
     "author": "stephenfairchilddev@gmail.com",
