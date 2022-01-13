@@ -10,18 +10,17 @@ import throwOnMissingField from "./throwOnMissingField";
  * Read through the content directory and parse the contents into attributes
  */
 export default async function readPostsFromSrc(config: {
-    directory: string;
+    contentPath: string;
 }): Promise<Post[]> {
-    const { directory } = config;
-    const postsPath = path.join(__dirname, "..", directory);
+    const { contentPath } = config;
 
-    const dir = await fs.readdir(postsPath);
+    const dir = await fs.readdir(contentPath);
     log(`Parsing content...`);
 
     return Promise.all(
         dir.map(async (filename: string) => {
             const slug = filename.replace(/\.md$/, "");
-            const file = await fs.readFile(path.join(postsPath, filename));
+            const file = await fs.readFile(path.join(contentPath, filename));
 
             const {
                 attributes,

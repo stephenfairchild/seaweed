@@ -1,8 +1,10 @@
 #!/usr/bin/env node
+
 import { createClient } from "redis";
+import minimist from "minimist";
+import path from "path";
 import cacheContent from "./bin/cacheContent";
 import { error, log } from "./bin/cliLog";
-import minimist from "minimist";
 
 (async () => {
     const argv = minimist(process.argv.slice(2));
@@ -21,9 +23,11 @@ import minimist from "minimist";
 
     // Default to the current working directory if a --directory flag is
     // not provided
-    let contentDirectory = argv.directory ? argv.directory : process.cwd();
+    let contentPath = argv.directory
+        ? path.join(__dirname, "..", argv.directory)
+        : process.cwd();
 
-    log(`Content directory detected: ${contentDirectory}`);
+    log(`Content directory detected: ${contentPath}`);
 
     if (!("SEAWEED_REDIS_URL" in process.env)) {
         error(`You must have SEAWEED_REDIS_URL defined in your ENVIRONMENT.`);
@@ -37,7 +41,7 @@ import minimist from "minimist";
 
     await redisClient.connect();
 
-    await cacheContent(redisClient, contentDirectory);
+    await cacheContent(redisClient, contentPath);
 
     await redisClient.quit();
 })();

@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import { Post } from "../types";
 import readPostsFromSrc from "./readPostsFromSrc";
 import { log } from "./cliLog";
@@ -10,11 +9,12 @@ interface ClientInterface {
 
 export default async function cacheContent(
     client: ClientInterface,
-    contentDir: string
+    contentPath: string
 ) {
     log(`Attempting to read content...`);
+
     const posts: Post[] = await readPostsFromSrc({
-        directory: contentDir,
+        contentPath,
     });
 
     posts.forEach(async (post) => {

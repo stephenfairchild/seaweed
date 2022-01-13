@@ -2,7 +2,8 @@
     "name": "@stephenfairchild/seaweed",
     "version": "0.2.2",
     "description": "Stores markdown in Redis as HTML",
-    "main": "index.ts",
+    "main": "index.js",
+    "author": "stephenfairchilddev@gmail.com",
     "scripts": {
         "publish": "npm publish --access public",
         "test": "npm run test:jest && npm run test:types",
@@ -10,10 +11,9 @@
         "test:types": "tsc"
     },
     "bin": {
-        "seaweed": "src/index.ts"
+        "seaweed": "src/index.js"
     },
-    "transform": {},
-    "author": "",
+    "keywords": ["markdown", "HTML", "redis", "CLI"],
     "license": "ISC",
     "dependencies": {
         "chalk": "^4.0.0",
