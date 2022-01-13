@@ -3,6 +3,7 @@
     "version": "0.2.0",
     "description": "Stores markdown in Redis as HTML",
     "main": "index.ts",
+    "type": "module",
     "scripts": {
         "publish": "npm publish --access public",
         "test": "npm run test:jest && npm run test:types",

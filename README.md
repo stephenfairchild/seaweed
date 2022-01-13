@@ -12,6 +12,12 @@ Register a Redis URL as an environment variable:
 
 `seaweed cache --directory=/home/data/content`
 
+Right now, `cache` is the only supported command. If you do not pass
+in a `--directory` flag then seaweed uses the current working directory.
+
+As an example, this is a valid command:
+`seaweed cache`
+
 ## FAQ
 
 Q: Why does this exist? What's an example use case for this?
