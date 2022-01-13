@@ -41,3 +41,7 @@ TLDR; once markdown is hoisted out of `vim` the options for reading is unlimited
 Q: Why would I not want to use this tool?
 
 A: Plenty of reasons. Here we take the unix philosophy and great strategy of "do one thing and do it well" and throw that out the window. This tool has all of the opinions, and is dependency heavy. This was originally created for my workflow. Don't use Markdown? This won't work. Dont want the cache as HTML? This won't work. Don't use Redis? Sucks to be you. TBH, I haven't had the desire to create abstractions around those areas. This tool to this point has been highly tailored to fit my workflow. If others want to open a PR to solve their use-case we'll gladly merge it and improve the tool for everybody. Until then I don't want to guess on what potential use-cases are without user feedback, especially if those use-cases are not my own.
+
+Q: Is the HTML sanitized?
+
+A: Nope, it's not sanitized. Feel free to open a PR to add sanitization with an existing sanitization library!
