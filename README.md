@@ -1,3 +1,6 @@
+![Seaweed logo](assets/logo.png)
+
+
 Seaweed takes your markdown files and stores them as HTML in Redis.
 
 ## Getting started
