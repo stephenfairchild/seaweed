@@ -33,7 +33,7 @@ Files must also all live in the same folder. Nested folders are not currently su
 Q: Why does this exist? What's an example use case for this?
 
 A: I write all my notes in `vim` and store them in markdown files on my local machine. It's just faster for me, and I can then quickly version control it in Git. I have so many years of notes there now it would be a hard migration to get everything out and I'm not sure I want to. I've used different proprietary tools over the years but they seem to come and go so fast, and the price points change fast as well.
-This includes my todo lists, blog content, 1:1 notes with my manager, etc. While writing is great with `vim`, reading is not always so great. So this tool exists to get content into `redis` so that clients can access it and then enjoy the data however the please. My blog site uses node and therefore uses the node redis SDK to access blog posts. My wife has a `grocery` tool we use to pull the `grocery` notes from Redis. This is just an example.
+This includes my todo lists, blog content, 1:1 notes with my manager, etc. While writing is great with `vim`, reading is not always so great. So this tool exists to get content into `redis` so that clients can access it and then enjoy the data however they please. My blog site uses node and therefore uses the node redis SDK to access blog posts. My wife has a `grocery` tool we use to pull the `grocery` notes from Redis. This is just an example.
 
 TLDR; once markdown is hoisted out of `vim` the options for reading is unlimited.
 
