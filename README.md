@@ -10,7 +10,7 @@ Register a Redis URL as an environment variable:
 
 ## Usage
 
-`seaweed cache /home/data/content`
+`seaweed cache --directory=/home/data/content`
 
 ## FAQ
 

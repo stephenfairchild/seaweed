@@ -3,6 +3,7 @@ import path from "path";
 import frontMatter from "front-matter";
 import { marked } from "marked";
 import { Post } from "../types";
+import { log } from "./cliLog";
 import throwOnMissingField from "./throwOnMissingField";
 
 /**
@@ -15,6 +16,7 @@ export default async function readPostsFromSrc(config: {
     const postsPath = path.join(__dirname, "..", directory);
 
     const dir = await fs.readdir(postsPath);
+    log(`Parsing content...`);
 
     return Promise.all(
         dir.map(async (filename: string) => {

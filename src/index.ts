@@ -20,10 +20,7 @@ import { error, log } from "./bin/cliLog";
         log("Running cache script...");
     }
 
-    let contentDirectory = "";
-    if (argv.directory) {
-        contentDirectory = argv.directory;
-    }
+    let contentDirectory = argv.directory ? argv.directory : process.cwd();
 
     log(`Content directory detected: ${contentDirectory}`);
 
@@ -39,12 +36,7 @@ import { error, log } from "./bin/cliLog";
 
     await redisClient.connect();
 
-    const client = {
-        get: redisClient.get,
-        set: redisClient.set,
-    };
+    await cacheContent(redisClient, contentDirectory);
 
-    await cacheContent(client, contentDirectory);
-
-    //await client.quit();
+    await redisClient.quit();
 })();

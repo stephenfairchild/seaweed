@@ -1,5 +1,5 @@
 ---
-title: Some content with attributes
+title: Content A
 created: 2022-01-04
 active: true
 ---

@@ -1,10 +1,13 @@
+import { error } from "./cliLog";
+
 export default function throwOnMissingField(
     attributes: { title: string; created: string; active: boolean },
     slug: string
 ) {
     const throwError = (attr: string) => {
-        throw new Error(`Missing Required Attribute. ${attr} attribute is required for all content. Not found for post:
-                        ${slug}`);
+        error(
+            `Missing Required Attribute. ${attr} attribute is required for all content. Not found for: ${slug}`
+        );
     };
 
     if (typeof attributes.title === "undefined") {
