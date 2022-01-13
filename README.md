@@ -18,6 +18,16 @@ in a `--directory` flag then seaweed uses the current working directory.
 As an example, this is a valid command:
 `seaweed cache`
 
+View the `examples` directory to see how your content should be structured in order
+for it to be stored correctly. You'll need to define a few attributes at the beginning
+of each file. We use `front-matter` to parse this.
+
+The file name should be slug-like. Someting like `grocery-list.md`. This name will be 
+used as the Redis key. If the key already exists, previous content will be stomped on. Maybe 
+we can solve this with a future commit, but I've not had a need to do that yet.
+
+Files must also all live in the same folder. Nested folders are not currently supported.
+
 ## FAQ
 
 Q: Why does this exist? What's an example use case for this?
